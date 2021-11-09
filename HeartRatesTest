@@ -1,0 +1,18 @@
+// Exercise 3.16
+package ChapterThree;
+
+import java.util.Scanner;
+
+public class HeartRatesTest {
+    public static void main(String[] args) {
+        HeartRates heartRates = new HeartRates(
+                "Tomiwa", "Olamide", 14, 2, 2000, 20);
+
+        System.out.printf("%s %s's maximum heart rate: %s%n",
+                heartRates.getFirstName(), heartRates.getLastName(), heartRates.getMaxHeartRate());
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter maximum rate is: ");
+        int maximumRate = scanner.nextInt();
+        System.out.printf("Maximum heart rate is %s", heartRates.maximum(maximumRate));
+    }
+}
