@@ -1,0 +1,29 @@
+// Exercise 3.13
+package ChapterThree;
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        int annualPercent = 10;
+        Employee employee1 = new Employee("John", "Jamil", 3000.00);
+        Employee employee2 = new Employee("Blue", "Ivy", 5000.00);
+
+        System.out.printf("%s's monthly salary: %s%n",
+                employee1.getLastName(), employee1.getMonthlySalary());
+        System.out.printf("%s's monthly salary: %s%n%n",
+                employee2.getLastName(), employee2.getMonthlySalary());
+
+        double yearlySalary1 = employee1.getMonthlySalary() * 12;
+        double yearlySalary2 = employee2.getMonthlySalary() * 12;
+
+        System.out.printf("Yearly salary: %.2f%n", yearlySalary1);
+        System.out.printf("Yearly salary: %.2f%n%n", yearlySalary2);
+
+        double increase1 = ((yearlySalary1 / 100) * annualPercent) + employee1.getMonthlySalary();
+        double increase2 = ((yearlySalary2 / 100) * annualPercent) + employee2.getMonthlySalary();
+
+        System.out.printf("Annual salary after %s percent increase in %s's yearly salary: %.2f%n",
+                annualPercent, employee1.getLastName(), increase1);
+        System.out.printf("Annual salary after %s percent increase in %s's yearly salary: %.2f%n%n",
+                annualPercent, employee2.getLastName(), increase2);
+    }
+}
