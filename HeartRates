@@ -1,0 +1,70 @@
+// Exercise 3.16
+package ChapterThree;
+
+public class HeartRates {
+    private String firstName;
+    private String lastName;
+    private int day;
+    private int month;
+    private int year;
+    private int age;
+    private int maxHeartRate;
+
+    public HeartRates(String firstName, String lastName, int day, int month, int year, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.age = age;
+
+        if (maxHeartRate > 0.0)
+            this.maxHeartRate = maxHeartRate;
+    }
+
+    public int getMaxHeartRate() {
+        return maxHeartRate;}
+    public Object maximum(int maximumRate) {
+        if (maximumRate > 0.0)
+            maxHeartRate = age - 220;
+        return null;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public void setDay(int day) {
+        this.day = day;
+    }
+    public int getDay() {
+        return day;
+    }
+    public void setMonth(int month) {
+        this.month = month;
+    }
+    public int getMonth() {
+        return month;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+    public int getYear() {
+        return year;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+
