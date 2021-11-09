@@ -1,0 +1,23 @@
+// Exercise 3.12
+package ChapterThree;
+
+import java.util.Scanner;
+
+public class InvoiceTest {
+    public static void main(String[] args) {
+        Invoice invoice = new Invoice(
+                "GHO42QZX", "Car part", 24, 240);
+
+        System.out.printf("%nPart number: %s%n", invoice.getPartNumber());
+        System.out.printf("Part description: %s%n", invoice.getPartDescription());
+        System.out.printf("Item quantity: %s%n", invoice.getItemQuantity());
+        System.out.printf("Price per each item: %s%n", invoice.getPricePerItem());
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter invoice amount: ");
+        double invoiceAmount = scanner.nextDouble();
+        System.out.printf("%nInvoice amount %s%n", invoiceAmount);
+        invoice.getInvoiceAmount(invoiceAmount);
+    }
+}
