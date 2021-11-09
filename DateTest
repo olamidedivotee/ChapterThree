@@ -1,0 +1,10 @@
+// Exercise 3.14
+package ChapterThree;
+
+public class DateTest {
+    public static void main(String[] args) {
+        Date date = new Date(18, 10, 2021);
+        String displayDate = date.getDay() + "/" + date.getMonth() + "/" + date.getYear();
+        System.out.println(displayDate);
+    }
+}
