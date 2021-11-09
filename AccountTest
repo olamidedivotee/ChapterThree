@@ -1,0 +1,52 @@
+// Exercise 3.11
+package ChapterThree;
+
+import java.util.Scanner;
+
+public class AccountTest {
+    public static void main(String[] args) {
+        Account account1 = new Account("John Paul", 50.00);
+        Account account2 = new Account("Tommy Reign", -7.53);
+
+        System.out.printf("%s balance: $%.2f%n", account1.getName(), account1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", account2.getName(), account2.getBalance());
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter deposit amount for account1: ");
+        double depositAmount = scanner.nextDouble();
+        System.out.printf("%nadding %.2f to account1 balance%n%n", depositAmount);
+        account1.deposit(depositAmount);
+
+        System.out.printf("%s balance: $%.2f%n", account1.getName(), account1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", account2.getName(), account2.getBalance());
+
+        System.out.print("Enter deposit amount for account2: ");
+        depositAmount = scanner.nextDouble();
+        System.out.printf("%nadding $%.2f to account2 balance%n%n", depositAmount);
+        account2.deposit(depositAmount);
+
+        System.out.printf("%s balance: $%.2f%n", account1.getName(), account1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", account2.getName(), account2.getBalance());
+
+        System.out.print("Enter withdrawal amount for account1: ");
+        double withdrawalAmount = scanner.nextDouble();
+        double availableBalance1 = account1.getBalance() - withdrawalAmount;
+        if (withdrawalAmount > account1.getBalance())
+            System.out.printf("Withdrawal amount exceeded account balance!%n");
+        else
+            System.out.printf("Withdrawing %.2f from %s account.%nYour new balance is %s%n%n",
+                    withdrawalAmount, account1.getName(), availableBalance1);
+            account1.withdraw(withdrawalAmount);
+
+        System.out.print("Enter withdrawal amount for account2: ");
+        withdrawalAmount = scanner.nextDouble();
+        double availableBalance2 = account2.getBalance() - withdrawalAmount;
+        if (withdrawalAmount > account2.getBalance())
+            System.out.println("Withdrawal amount exceeded account balance!");
+        else
+            System.out.printf("Withdrawing %.2f from %s account.%nYour new balance is %s%n",
+                    withdrawalAmount, account2.getName(), availableBalance2);
+            account2.withdraw(withdrawalAmount);
+    }
+}
